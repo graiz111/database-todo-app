@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const app = express();
-
+const PORT=3000
 
 app.use(express.json());
 app.use(cors({ origin: 'http://localhost:5173' }));
@@ -69,6 +69,6 @@ app.put('/tasks/:id', async (req, res) => {
 });
 
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log('Server running on http://localhost:3000');
 });
