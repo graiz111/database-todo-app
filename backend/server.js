@@ -7,13 +7,14 @@ require('dotenv').config();
 const app = express();
 
 const PORT = process.env.PORT || 3000;
+const MONGO_URI=process.env.MONGO_URI
 
 app.use(express.json());
 app.use(cors({ origin: 'http://localhost:5173' }));
 
 
 mongoose
-  .connect('mongodb+srv://gracesaji111:Gelly123@cluster1.8oa5v.mongodb.net/tasksDB?retryWrites=true&w=majority')
+  .connect(MONGO_URI)
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.error('Failed to connect to MongoDB:', err));
 
