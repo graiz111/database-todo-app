@@ -9,7 +9,7 @@ function App() {
 
   
   useEffect(() => {
-    fetch('http://localhost:3000/tasks')
+    fetch('http://localhost:3000')
       .then((response) => response.json())
       .then((data) => {
         setTasks(data.task); 
